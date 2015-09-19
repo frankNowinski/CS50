@@ -1,0 +1,44 @@
+0.  BMP: 24 bits per pixel or 16.7 million.
+    GIF: 256 colors.
+    JPEG: 24 bits per pixel or 16.7 million.
+    PNG: 24/32 bit per pixel or 16.7million/4 billion.
+        
+1.  GIF is the only format that supports animation. 
+
+2.  Lossless and lossy compression determine how much of the original data is restored from a compressed file after it is uncompressed. The lossless compression method allows the user to recover and restore all the original data of the file upon decompression. This practice is typicaly implemented on text files where the data is pertinent, e.g. spreadsheets, college papers.
+    
+Lossy compression enables the user to restore most, but not all, of the information. Usually lossy compression curtails redundant or minuscule information. Video and sound files generally utilize lossy compression because the left out information would go unnoticed.   
+    
+3.  JPEG's are loosely compressed. 
+
+4.  When a file is deleted from the FAT system the first character of the linked list (the address) is modified to indicate that the files memory can be recycled or written over. Then, the FAT clusters that were associated with said file are relocated to an area of the hard drive where they can be written over. The information still remains intact until it is written over. 
+    
+5.  I would use disk sanitizer software to completely eradicate all sensitive information. 
+
+6.  Stdint.h allows the programmer to declare the number of bits used to store values in an integer type, as well as designate minimum and maximum allowable values using macros. Implementing stdint minimizes miscommunications and ensures compatibility between machines, i.e. if you set an integer to the size of 16 bits, any other machine will only read it as a 16-bit integer. 
+    
+7.  Using predefined types facilitates cross platform communication as to precisely how mow many bits you desire to use for a given variable. 
+
+8.  BYTE = 1, DWORD = 4, LONG = 4, WORD = 2.
+
+9.  The first two bytes of a BMP file, also referred to as the magic numbers, are BM 0x424D.
+
+10. bfSize: Specifies the whole file size in bytes; it stores the size of the entire image, both headers and padding. 
+    
+biSize: Specifies the size of the image, the size of the RGB triple, and the total size of the padding  (usually equates to 40 bytes). This value does not include the size of the color table or the color masks.
+    
+11. If the bfHeight is negative, the bitmap is a top-down DIB with the origin at the top-left corner. 
+
+12. The bitCount member specifies the number of bits per pixels, or bpp.
+
+13. Line 37 could return NULL if argv[2] is an invalid location, could not create the file to write to, or if the input is too large for the file. 
+
+14. Since there is only one BITMAPINFOHEADER inside of a BMP file, fread should only read 1 header. 
+
+15. To complete a scanline the value must be divisible by 4. If the biWidth of a scanline is 3, we must add 1 unit of padding so the biWidth reaches 4. 
+
+16. Fseek() is used to change the file position of the stream. In short, this function skips over padding and searches for the next pixel. 
+
+17. The user can set from_where to SEEK_CUR to change the position of the file pointer to it's current location. 
+ 
+18. Rob Bowden and his cat. 
