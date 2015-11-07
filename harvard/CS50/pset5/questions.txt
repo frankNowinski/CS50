@@ -1,0 +1,30 @@
+0.  Pneumonoultramicroscopicsilicovolcanoconiosis is a lung disease caused by silica dust, or, an obnoxiously long word.  
+     
+1.  Getrusage is used to examine the resource usage of a process. Uses either RUSAGE_SELF - the current process, or RUSAGE_CHILDREN -
+    or the children processes that have already been terminated. 
+    
+2.  There are 16 members in a variable type struct usage.
+
+3.  Since rusage is such a large struct, it would be more effective to pass a pointer then the actual value.
+
+4.  The main function iterates through a textfile -- character by character -- constructing a word consisting of only 
+    alphabetical characters and apostrophes (if they are not the first character). Once the for loop reaches a non-digit character, the
+    word is assigned NULL and determines if it is misspelled. Then restarts the process over again by returning the index to 0.
+     
+5.  Fgetc trumps fscanf in speller.c because of its ability to evaluate one character at a time, detecting any undesirable characters. 
+    In addition, fgetc will save memory.
+
+6.  Declaring check and load as constants indicates to the compiler that you will not be modifying the data contained in the variable, 
+    therefore, optimizing your code. 
+
+7.  To more thoroughly understand the mechanics, I implemented both data structures in this pset. In my trie implementation, there was a 
+    boolean variable to check if a word exists and a node pointer at an array. The array consisted of each letter in the alphabet plus an
+    apostrophe. The linked list node consisted of a char variable storing the word and a node pointing to the next node.     
+
+8.  The runtime of my first implementation was a couple of second. 
+
+9.  In the linked list data structure i simply increased the size of the hash table to diminish runtime. Also, i hashed the words in the 
+    dictionary by calculating the sum of the individual characters. 
+
+10. One difficulty i encountered was my inability to load every word in the dictionary on my linked list data structure. However, after
+    incessantly reviewing my code I discovered that I incorrectly structured my hash table.  
